@@ -1,0 +1,31 @@
+{% extends 'base.html' %}  <!-- Extends the base template -->
+
+{% load static %}  <!-- Load static files -->
+
+{% block content %}  <!-- Define the content block -->
+
+<div class="row">
+    <div class="col">
+       <div class="notes_lists_heading text-center mb-5">
+            <h1 class="fs-4">YOUR LIST OF NOTES</h1>  <!-- Heading for the list of notes -->
+       </div>
+    </div>
+</div>
+
+<div class="row">
+    {% for note in notes %}  <!-- Loop through each note in the list -->
+       <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-header">{{note.title}}</div>  <!-- Display the title of the note -->
+            <div class="card-body">
+                <p>{{note.text}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>  <!-- Link to view the details of the note -->
+            </div>
+        </div>
+       </div> 
+    {% endfor %} 
+</div>
+
+{% endblock %}  <!-- End of content block -->

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    
+    <div class="row">
+        <div class="col">
+            <div class="home-holder text-center">
+                <h1 class="fs3">WELCOME TO STICKY NOTES</h1>
+                <p>Login. Sign Up.  or  Go to your Notes!</p>
+                <a href="{% url 'notes.list' %}"class="btn btn-success btn-sm">STICKY NOTES</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+    
